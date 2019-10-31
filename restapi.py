@@ -68,7 +68,7 @@ questions_schema=QuestionSchema(many=True)
 if not os.path.exists(os.path.join(basedir,"initialized.pickle")):
     db.create_all()
     initialized=True
-    with open("initialized.pickle") as f:
+    with open("initialized.pickle",'wb') as f:
         pickle.dump(initialized,f)
 
 @app.route("/")
